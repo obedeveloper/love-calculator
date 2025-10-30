@@ -1,0 +1,23 @@
+[
+  {
+    "href": "/",
+    "text": "Home"
+  },
+  {
+    "href": "/calc",
+    "text": "Calculate"
+  },
+  {
+    "href": "/saved",
+    "text": "Saved"
+  },
+  {
+    "href": "/about",
+    "text": "About"
+  },
+  {
+    "href": "https://github.com/obedeveloper/love-calculator",
+    "text": "GitHub",
+    "external": true
+  }
+]
