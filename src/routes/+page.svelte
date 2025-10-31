@@ -23,12 +23,16 @@
     font-weight: 900;
     font-size: 2.95rem;
     color: var(--primary-color);
-    text-align: center;
   }
 
   p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
+  }
+
+  h1,
+  p {
+    text-align: center;
   }
 
   @media (width <= 37rem) {

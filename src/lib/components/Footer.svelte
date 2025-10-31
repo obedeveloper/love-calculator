@@ -13,6 +13,7 @@
     margin-top: 2rem;
     background-color: hsla(from var(--primary-color) h s 10);
     color: white;
+    text-align: center;
   }
 
   h3 {
@@ -21,7 +22,6 @@
     margin-bottom: 1.5rem;
     text-decoration: underline;
     text-decoration-thickness: 1.3px;
-    text-align: center;
   }
 
   p {
