@@ -27,7 +27,7 @@ body {
   accent-color: var(--primary-color);
 }
 
-:is(header, main, footer) {
+:is(header, main) {
   --margin: 2rem;
   padding-inline: var(--margin);
 

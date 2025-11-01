@@ -15,6 +15,7 @@
     "@sveltejs/adapter-auto": "^7.0.0",
     "@sveltejs/kit": "^2.47.1",
     "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@types/showdown": "^2.0.6",
     "svelte": "^5.41.0",
     "svelte-check": "^4.3.3",
     "typescript": "^5.9.3",
@@ -23,6 +24,8 @@
   "dependencies": {
     "@fontsource-variable/roboto": "^5.2.8",
     "@fontsource/libre-caslon-text": "^5.2.7",
-    "@number-flow/svelte": "^0.3.9"
+    "@number-flow/svelte": "^0.3.9",
+    "showdown": "^2.1.0",
+    "svelte-youtube-embed": "^0.4.6"
   }
 }
