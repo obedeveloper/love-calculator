@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@fontsource-variable/roboto": "^5.2.8",
-    "@fontsource/libre-caslon-text": "^5.2.7"
+    "@fontsource/libre-caslon-text": "^5.2.7",
+    "@number-flow/svelte": "^0.3.9"
   }
 }

@@ -8,6 +8,16 @@
   font: inherit;
 }
 
+@font-face {
+  font-family: 'ds-digital';
+  src: url('/DS-DIGI.TTF');
+}
+
+@font-face {
+  font-family: 'ds-digital-bold';
+  src: url('/DS-DIGIB.TTF');
+}
+
 :root {
   --primary-color: #570023;
 }
