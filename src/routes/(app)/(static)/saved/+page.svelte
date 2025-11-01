@@ -15,7 +15,7 @@
 
   onMount(() => {
     history = JSON.parse(localStorage.getItem(key) ?? '[]') as HistoryItem[];
-    setTimeout(() => (loading = false), 2e3);
+    loading = false;
   });
 </script>
 

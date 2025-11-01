@@ -2,10 +2,6 @@
   import CTA from '$lib/components/CTA.svelte';
 </script>
 
-<svelte:head>
-  <title>Love Calculator</title>
-</svelte:head>
-
 <h1>Are You a Match Made in Heaven? Calculate Your Love Percentage!</h1>
 
 <p>
