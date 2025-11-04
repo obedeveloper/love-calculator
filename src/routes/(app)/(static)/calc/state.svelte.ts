@@ -13,19 +13,8 @@ export default class State {
   );
   private localStorageKey = 'history';
 
-  private link: string;
-  private code: string;
-
   constructor(public url: string) {
     this.url = url;
-    this.link = $derived(`${new URL(`${this.url}/shared${this.params}`)}`);
-    this.code = $derived(
-      getCode(
-        this.url,
-        this.params,
-        `${this.firstName} Loves ${this.secondName} ${this.percentage}%`
-      )
-    );
   }
 
   flip() {
@@ -43,6 +32,23 @@ export default class State {
   save() {
     const newHistory = this.addItemToHistory();
     localStorage.setItem(this.localStorageKey, JSON.stringify(newHistory));
+  }
+
+  clear() {
+    this.firstName = '';
+    this.secondName = '';
+  }
+
+  private get link() {
+    return `${new URL(`${this.url}/shared${this.params}`)}`;
+  }
+
+  private get code() {
+    return getCode(
+      this.url,
+      this.params,
+      `${this.firstName} Loves ${this.secondName} ${this.percentage}%`
+    );
   }
 
   private addItemToHistory() {

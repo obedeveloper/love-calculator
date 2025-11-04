@@ -12,19 +12,22 @@
 
   const lenFirstName = $derived(state.firstName.length);
   const lenSecondName = $derived(state.secondName.length);
-  const showActions = $derived(!!lenFirstName && !!lenSecondName);
+  const isApplicable = $derived(!!lenFirstName && !!lenSecondName);
 </script>
 
 <div class="container">
   <div>
     <Form></Form>
-    <Steps></Steps>
-    <span><NumberFlow value={state.percentage}></NumberFlow>%</span>
+    {#if isApplicable}
+      <Steps></Steps>
+      <span><NumberFlow value={state.percentage}></NumberFlow>%</span>
+    {:else}
+      <span class="not-ds">N/A</span>
+      <p>Not Applicable!</p>
+    {/if}
   </div>
 
-  {#if showActions}
-    <Actions></Actions>
-  {/if}
+  <Actions {isApplicable}></Actions>
 </div>
 
 <style>
@@ -52,6 +55,13 @@
     padding-inline: 0.75rem;
     border-radius: 0.25rem;
     border: 1.35px solid var(--primary-color);
-    font-family: 'ds-digital-bold';
+
+    &:not(.not-ds) {
+      font-family: 'ds-digital-bold';
+    }
+  }
+
+  p {
+    color: var(--primary-color);
   }
 </style>

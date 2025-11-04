@@ -1,13 +1,26 @@
 <script lang="ts">
   import { getStateContext } from './context';
   const state$ = getStateContext();
+
+  interface Props {
+    isApplicable: boolean;
+  }
+
+  const { isApplicable }: Props = $props();
+
+  const actions = [
+    { text: 'Flip', action: () => state$.flip() },
+    { text: 'Clear', action: () => state$.clear() },
+    { text: 'Save', action: () => state$.save() },
+    { text: 'Copy Link', action: () => state$.copyLink() },
+    { text: 'Copy Embed Link', action: () => state$.copyEmbedCode() },
+  ];
 </script>
 
 <div>
-  <button onclick={() => state$.flip()}>Flip</button>
-  <button onclick={() => state$.save()}>Save</button>
-  <button onclick={() => state$.copyLink()}>Copy Link</button>
-  <button onclick={() => state$.copyEmbedCode()}>Copy Embed Code</button>
+  {#each actions as { action, text }}
+    <button disabled={!isApplicable} onclick={action}>{text}</button>
+  {/each}
 </div>
 
 <style>
@@ -25,6 +38,11 @@
     border-radius: 0.35rem;
     cursor: pointer;
     width: 100%;
+
+    &:disabled {
+      background-color: hsl(from black h s l / 50%);
+      cursor: auto;
+    }
 
     &:focus {
       animation: bounce 0.5s ease-in-out;
