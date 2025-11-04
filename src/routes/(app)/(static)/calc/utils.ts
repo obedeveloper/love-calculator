@@ -9,7 +9,7 @@ export function getUniqueItems(current: HistoryItem[]): HistoryItem[] {
   const uniqueKeys = new Set<string>();
 
   for (const item of current) {
-    const key = `${item.firstName}-${item.secondName}`;
+    const key = `${item.firstName.toLowerCase()}-${item.secondName.toLowerCase()}`;
 
     if (!uniqueKeys.has(key)) {
       uniqueKeys.add(key);
