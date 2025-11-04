@@ -10,12 +10,12 @@
 
 @font-face {
   font-family: 'ds-digital';
-  src: url('/DS-DIGI.TTF');
+  src: url('/fonts/DS-DIGI.TTF');
 }
 
 @font-face {
   font-family: 'ds-digital-bold';
-  src: url('/DS-DIGIB.TTF');
+  src: url('/fonts/DS-DIGIB.TTF');
 }
 
 :root {
