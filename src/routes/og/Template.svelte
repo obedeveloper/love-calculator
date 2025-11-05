@@ -10,13 +10,15 @@
   }
 
   const { firstName, secondName }: Props = $props();
+  const emoji = randomLoveEmoji();
 </script>
 
 <div>
   <h1>{firstName}</h1>
   <p>
-    <span class="emoji">{randomLoveEmoji()}</span>
+    <span class="emoji">{emoji}</span>
     <span class="percentage">{calc(firstName, secondName)}%</span>
+    <span class="emoji">{emoji}</span>
   </p>
   <h1>{secondName}</h1>
 </div>
@@ -30,14 +32,18 @@
     padding: 1rem;
   }
 
+  div,
+  p {
+    align-items: center;
+  }
+
   h1 {
     font-family: 'inter';
+    margin: 0;
   }
 
   p {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 
   span {
