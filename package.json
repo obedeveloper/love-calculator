@@ -1,34 +1,43 @@
 {
-  "name": "love-calculator",
-  "private": true,
-  "version": "0.0.1",
-  "type": "module",
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview --host",
-    "prepare": "svelte-kit sync || echo ''",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
-  },
-  "devDependencies": {
-    "@sveltejs/adapter-auto": "^7.0.0",
-    "@sveltejs/kit": "^2.47.1",
-    "@sveltejs/vite-plugin-svelte": "^6.2.1",
-    "@types/showdown": "^2.0.6",
-    "svelte": "^5.41.0",
-    "svelte-check": "^4.3.3",
-    "typescript": "^5.9.3",
-    "vite": "^7.1.10"
-  },
-  "dependencies": {
-    "@fontsource-variable/roboto": "^5.2.8",
-    "@fontsource/libre-caslon-text": "^5.2.7",
-    "@number-flow/svelte": "^0.3.9",
-    "@resvg/resvg-js": "^2.6.2",
-    "satori": "^0.18.3",
-    "satori-html": "^0.3.2",
-    "showdown": "^2.1.0",
-    "svelte-youtube-embed": "^0.4.6"
-  }
+	"name": "love-calculator",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview --host",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"format": "prettier --write .",
+		"lint": "prettier --check ."
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^7.0.0",
+		"@sveltejs/kit": "^2.47.1",
+		"@sveltejs/vite-plugin-svelte": "^6.2.1",
+		"@tailwindcss/forms": "^0.5.10",
+		"@tailwindcss/typography": "^0.5.19",
+		"@tailwindcss/vite": "^4.1.14",
+		"@types/showdown": "^2.0.6",
+		"prettier": "^3.6.2",
+		"prettier-plugin-svelte": "^3.4.0",
+		"prettier-plugin-tailwindcss": "^0.7.1",
+		"svelte": "^5.41.0",
+		"svelte-check": "^4.3.3",
+		"tailwindcss": "^4.1.14",
+		"typescript": "^5.9.3",
+		"vite": "^7.1.10"
+	},
+	"dependencies": {
+		"@fontsource-variable/roboto": "^5.2.8",
+		"@fontsource/libre-caslon-text": "^5.2.7",
+		"@number-flow/svelte": "^0.3.9",
+		"@resvg/resvg-js": "^2.6.2",
+		"satori": "^0.18.3",
+		"satori-html": "^0.3.2",
+		"showdown": "^2.1.0",
+		"svelte-youtube-embed": "^0.4.6"
+	}
 }
