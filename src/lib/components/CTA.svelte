@@ -1,22 +1,8 @@
-<script lang="ts">
-  import { goto } from '$app/navigation';
-  import { resolve } from '$app/paths';
-</script>
-
-<button onclick={() => goto(resolve('/calc'))}>Calculate Love!</button>
-
-<style>
-  button {
-    padding-inline: 1rem;
-    padding-block: 0.5rem;
-    font-size: 1.65rem;
-    background-color: var(--primary-color);
-    border: none;
-    color: white;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    margin-inline: auto;
-    display: block;
-    font-weight: 600;
-  }
-</style>
+<a
+	class="w-fit justify-self-center rounded bg-pink-500 px-6
+  py-2.5 text-2xl font-medium text-white transition-colors
+  duration-200 hover:bg-pink-600"
+	href="/calc"
+>
+	Calculate Love!
+</a>

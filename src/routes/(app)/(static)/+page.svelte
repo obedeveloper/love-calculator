@@ -1,43 +1,19 @@
 <script lang="ts">
-  import CTA from '$lib/components/CTA.svelte';
+	import CTA from '$lib/components/CTA.svelte';
 </script>
 
-<h1>Are You a Match Made in Heaven? Calculate Your Love Percentage!</h1>
+<div class="hero grid place-content-center gap-6 px-4 py-4">
+	<h1 class="font-libre text-center text-4xl font-bold text-pink-600">
+		Are You a Match Made in Heaven? <u>Calculate</u> Your Love Percentage!
+	</h1>
 
-<p>
-  Welcome to our Love Percentage Calculator! Curious about how compatible you
-  and your partner are? This fun tool calculates your love percentage based on
-  your names. Remember, it's all in good spirit for entertainment!
-</p>
+	<p class="text-justify">
+		Welcome to our Love Percentage Calculator! <em>Curious</em> about how compatible you and your
+		partner are? <br />
+		This fun tool calculates your love percentage based on your names.
+		<u class="underline-offset-2">Remember, </u> it's all in good spirit for entertainment!
+		<br /> Read <a class="text-pink-600 underline" href="/about">about</a> how we calculate it!
+	</p>
 
-<CTA></CTA>
-
-<style>
-  h1 {
-    margin-block: 1rem;
-    margin-bottom: 2rem;
-    font-weight: 900;
-    font-size: 2.95rem;
-    color: var(--primary-color);
-  }
-
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  h1,
-  p {
-    text-align: center;
-  }
-
-  @media (width <= 37rem) {
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    p {
-      font-size: 1rem;
-    }
-  }
-</style>
+	<CTA></CTA>
+</div>

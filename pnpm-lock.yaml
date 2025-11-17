@@ -11,9 +11,6 @@ importers:
       '@fontsource-variable/roboto':
         specifier: ^5.2.8
         version: 5.2.8
-      '@fontsource/libre-caslon-text':
-        specifier: ^5.2.7
-        version: 5.2.7
       '@number-flow/svelte':
         specifier: ^0.3.9
         version: 0.3.9(svelte@5.43.2)
@@ -239,9 +236,6 @@ packages:
 
   '@fontsource-variable/roboto@5.2.8':
     resolution: {integrity: sha512-UBhCzUXpkZZqBhTnkIhkM3USlSuu2Da6k4mjiRaEnZtvMOMWcQVOV6oV2cY00plUuJZrsnTRtt3ZRRJF09gV5w==}
-
-  '@fontsource/libre-caslon-text@5.2.7':
-    resolution: {integrity: sha512-popxcrFaQyr1KtVwAxPF3s30ioZwHsASO1Np+w7KbKUw5N57aluimNZWDDNFDKlph536PS8QCpCG4k3Wj7QlyQ==}
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -1158,8 +1152,6 @@ snapshots:
     optional: true
 
   '@fontsource-variable/roboto@5.2.8': {}
-
-  '@fontsource/libre-caslon-text@5.2.7': {}
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:

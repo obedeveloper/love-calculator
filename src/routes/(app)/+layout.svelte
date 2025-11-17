@@ -1,10 +1,10 @@
 <script lang="ts">
-  import Nav from '$lib/components/Nav.svelte';
+	import Nav from '$lib/components/Nav.svelte';
 
-  let { children } = $props();
+	let { children } = $props();
 </script>
 
-<Nav></Nav>
-<main>
-  {@render children()}
+<main class="min-h-dvh">
+	<Nav></Nav>
+	{@render children()}
 </main>
