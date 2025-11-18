@@ -1,24 +1,11 @@
 <script lang="ts">
-  import { getStateContext } from './context';
+	import { getStateContext } from './context';
 
-  const state = getStateContext();
+	const state = getStateContext();
 </script>
 
-<ul>
-  {#each state.steps as step}
-    <li>{step.join('')}</li>
-  {/each}
-</ul>
-
-<style>
-  ul {
-    list-style: none;
-  }
-
-  li {
-    text-align: center;
-    letter-spacing: 0.35rem;
-    font-size: 2rem;
-    font-family: 'ds-digital';
-  }
-</style>
+<div class="space-y-1">
+	{#each state.steps as step}
+		<p class="line-clamp-1 text-center font-ds-digi text-3xl">{step.join(' ')}</p>
+	{/each}
+</div>

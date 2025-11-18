@@ -1,9 +1,8 @@
 <script lang="ts">
-  import '@fontsource-variable/roboto';
-  import '@fontsource/libre-caslon-text';
-  import '$lib/app.css';
+	import './layout.css';
+	import '@fontsource-variable/roboto';
 
-  let { children } = $props();
+	let { children } = $props();
 </script>
 
 {@render children()}

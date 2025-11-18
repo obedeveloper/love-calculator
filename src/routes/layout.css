@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+body {
+	font-family: 'Roboto Variable', sans-serif;
+}
+
+main:has(.hero) {
+	@apply grid grid-rows-[auto_1fr];
+}
+
+@font-face {
+	font-family: 'DS-DIGI';
+	src: url('/fonts/DS-DIGI.TTF');
+}
+
+@font-face {
+	font-family: 'DS-DIGIB';
+	src: url('/fonts/DS-DIGIB.TTF');
+}
+
+@font-face {
+	font-family: 'noto-emoji';
+	src: url('/fonts/NotoEmoji-Regular.ttf');
+}
+
+@theme {
+	--font-ds-digi: 'DS-DIGI';
+	--font-ds-digi-b: 'DS-DIGIB';
+	--font-noto: 'noto-emoji';
+}

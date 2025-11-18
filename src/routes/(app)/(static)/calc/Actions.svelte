@@ -1,69 +1,41 @@
 <script lang="ts">
-  import { getStateContext } from './context';
-  const state$ = getStateContext();
+	import { getStateContext } from './context';
+	const state$ = getStateContext();
 
-  interface Props {
-    isApplicable: boolean;
-  }
+	interface Props {
+		isApplicable: boolean;
+	}
 
-  const { isApplicable }: Props = $props();
+	const { isApplicable }: Props = $props();
 
-  const actions = [
-    { text: 'Flip', action: () => state$.flip() },
-    { text: 'Clear', action: () => state$.clear() },
-    { text: 'Save', action: () => state$.save() },
-    { text: 'Copy Link', action: () => state$.copyLink() },
-    { text: 'Copy Embed Link', action: () => state$.copyEmbedCode() },
-  ];
+	const actions = [
+		{ text: 'Flip', action: () => state$.flip() },
+		{ text: 'Clear', action: () => state$.clear() },
+		{ text: 'Save', action: () => state$.save() },
+		{ text: 'Copy Link', action: () => state$.copyLink() },
+		{ text: 'Copy Embed Code', action: () => state$.copyEmbedCode() }
+	];
+
+	const feedbacks = ['Saved!', 'Link Copied!', 'Code Copied!'];
 </script>
 
-<div>
-  {#each actions as { action, text }}
-    <button disabled={!isApplicable} onclick={action}>{text}</button>
-  {/each}
+<div class="grid grid-cols-2 border border-pink-300">
+	{#each actions as { action, text }, i}
+		<button
+			class="cursor-pointer border border-pink-300 py-2 text-lg
+			hover:bg-pink-100 {i == actions.length - 1 && 'col-span-2'}"
+			disabled={!isApplicable}
+			onclick={(e) => {
+				action();
+				const el = e.target as HTMLButtonElement;
+
+				if (i > 1) {
+					el.innerText = feedbacks[i - 2];
+					setTimeout(() => (el.innerText = text), 1e3);
+				}
+			}}
+		>
+			{text}
+		</button>
+	{/each}
 </div>
-
-<style>
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  button {
-    padding: 0.5rem 1rem;
-    background-color: hsl(from var(--primary-color) h 60% l / 90%);
-    border: none;
-    color: white;
-    border-radius: 0.35rem;
-    cursor: pointer;
-    width: 100%;
-
-    &:disabled {
-      background-color: hsl(from black h s l / 50%);
-      cursor: auto;
-    }
-
-    &:focus {
-      animation: bounce 0.5s ease-in-out;
-    }
-  }
-
-  @keyframes bounce {
-    50% {
-      scale: 0.9;
-    }
-  }
-
-  @media (width <= 50.5625rem) {
-    div {
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-
-    button {
-      flex-grow: 1;
-      width: fit-content;
-    }
-  }
-</style>

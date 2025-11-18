@@ -1,67 +1,47 @@
 <script lang="ts">
-  import { page } from '$app/state';
-  import Actions from './Actions.svelte';
-  import { setStateContext } from './context';
-  import Form from './Form.svelte';
-  import State from './state.svelte';
-  import Steps from './Steps.svelte';
-  import NumberFlow from '@number-flow/svelte';
+	import { page } from '$app/state';
+	import Actions from './Actions.svelte';
+	import { setStateContext } from './context';
+	import Form from './Form.svelte';
+	import State from './state.svelte';
+	import Steps from './Steps.svelte';
+	import NumberFlow from '@number-flow/svelte';
 
-  const state = new State(page.url.origin);
-  setStateContext(state);
+	const state = new State(page.url.origin);
+	setStateContext(state);
 
-  const lenFirstName = $derived(state.firstName.length);
-  const lenSecondName = $derived(state.secondName.length);
-  const isApplicable = $derived(!!lenFirstName && !!lenSecondName);
+	const lenFirstName = $derived(state.firstName.length);
+	const lenSecondName = $derived(state.secondName.length);
+	const isApplicable = $derived(!!lenFirstName && !!lenSecondName);
 </script>
 
-<div class="container">
-  <div>
-    <Form></Form>
-    {#if isApplicable}
-      <Steps></Steps>
-      <span><NumberFlow value={state.percentage}></NumberFlow>%</span>
-    {:else}
-      <span class="not-ds">N/A</span>
-      <p>Not Applicable!</p>
-    {/if}
-  </div>
-
-  <Actions {isApplicable}></Actions>
+<div class="mx-auto my-4 max-w-125 px-4 sm:grid sm:max-w-5xl sm:grid-cols-2 sm:gap-6">
+	<div
+		class="hidden h-full min-h-100 rounded-lg bg-[url('/couple-holding-bright-red-rose-hands.jpg')]
+		bg-cover bg-center bg-no-repeat sm:block"
+	></div>
+	<div class="space-y-4">
+		<Form></Form>
+		{#if isApplicable}
+			{@render Calculations()}
+			<Actions {isApplicable}></Actions>
+		{:else}
+			<p class="mt-4 border-[1.5px] border-red-400 bg-red-100 py-2 text-center text-lg">
+				N/A <br />
+				Not Applicable!
+			</p>
+		{/if}
+	</div>
 </div>
 
-<style>
-  .container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    font-size: 1.2rem;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-  }
-
-  div:not(.container) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.65rem;
-  }
-
-  span {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    background-color: hsl(from var(--primary-color) h s l / 25%);
-    padding-inline: 0.75rem;
-    border-radius: 0.25rem;
-    border: 1.35px solid var(--primary-color);
-
-    &:not(.not-ds) {
-      font-family: 'ds-digital-bold';
-    }
-  }
-
-  p {
-    color: var(--primary-color);
-  }
-</style>
+{#snippet Calculations()}
+	<div class="grid gap-4">
+		<Steps></Steps>
+		<p
+			class="border-[1.5px] border-pink-400
+      bg-pink-100 text-center font-ds-digi-b text-7xl text-pink-900"
+		>
+			<NumberFlow value={state.percentage}></NumberFlow>%
+		</p>
+	</div>
+{/snippet}
