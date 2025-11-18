@@ -1,93 +1,33 @@
 <script lang="ts">
-  import { page } from '$app/state';
-  import type { HistoryItem } from '../calc/utils';
+	import { page } from '$app/state';
+	import type { HistoryItem } from '../calc/utils';
 
-  const { history }: { history: HistoryItem[] } = $props();
+	const { history }: { history: HistoryItem[] } = $props();
 </script>
 
-<ul>
-  {#each history as { firstName, secondName, percentage }}
-    <li>
-      <h3>
-        <a
-          href="{page.url
-            .origin}/shared?firstName={firstName}&secondName={secondName}"
-        >
-          {firstName} Loves {secondName}
-        </a>
-      </h3>
-      <p>{percentage}% 💖</p>
-    </li>
-  {:else}
-    <div>
-      <span>No Saved Love Calculations Found</span>
-      <p class="p">
-        It looks like you haven't saved any love calculations yet. Please save
-        your calculations to access them later!
-      </p>
-    </div>
-  {/each}
+<ul class="my-4 space-y-3 px-4">
+	{#each history as { firstName, secondName, percentage }}
+		<li class="space-y-1 border border-pink-300 bg-pink-50 px-3 py-2 text-lg">
+			<h3 class="line-clamp-1">
+				<a href="{page.url.origin}/shared?firstName={firstName}&secondName={secondName}">
+					{firstName} Loves {secondName}
+				</a>
+			</h3>
+			<p class="font-ds-digi-b text-3xl text-pink-700">
+				{percentage}%
+			</p>
+			<p class="flex flex-wrap gap-2">
+				{#each { length: 10 } as _, i}
+					<span class="font-noto {i + 1 <= percentage / 10 && 'text-pink-500'}">💝</span>
+				{/each}
+			</p>
+		</li>
+	{:else}
+		<h2 class="text-4xl text-center text-red-500">No Saved Love Calculations Found!</h2>
+		<p class="mt-8 text-justify">
+			It looks like you haven't saved any love
+			<a class="underline text-red-500" href="/calc">calculations</a> yet. Please save your calculations
+			to access them later!
+		</p>
+	{/each}
 </ul>
-
-<style>
-  .p {
-    color: black;
-    font-weight: 400;
-    font-size: 1rem;
-
-    @media (width > 40rem) {
-      font-size: 1.15rem;
-    }
-  }
-
-  span {
-    color: var(--primary-color);
-    font-size: 2rem;
-    display: block;
-    margin-block: 1.75rem;
-  }
-
-  ul {
-    list-style: none;
-    padding-block: 1rem;
-
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
-    gap: 1.5rem;
-  }
-
-  li {
-    padding: 1rem 1.25rem;
-    box-shadow: 5px 3px 6px hsl(from var(--primary-color) h s l / 75%);
-    border: 1.5px solid var(--primary-color);
-    border-left-width: 5px;
-  }
-
-  h3 {
-    margin-bottom: 0.35rem;
-    font-weight: 700;
-    font-size: 1.5rem;
-    font-family: 'Roboto Variable';
-
-    a {
-      color: #222;
-      text-decoration: none;
-    }
-  }
-
-  p {
-    font-weight: 600;
-    color: var(--primary-color);
-    font-size: 1.25rem;
-  }
-
-  h3,
-  p:not(.p) {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    line-clamp: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-</style>

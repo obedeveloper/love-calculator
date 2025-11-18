@@ -20,7 +20,13 @@ main:has(.hero) {
 	src: url('/fonts/DS-DIGIB.TTF');
 }
 
+@font-face {
+	font-family: 'noto-emoji';
+	src: url('/fonts/NotoEmoji-Regular.ttf');
+}
+
 @theme {
 	--font-ds-digi: 'DS-DIGI';
 	--font-ds-digi-b: 'DS-DIGIB';
+	--font-noto: 'noto-emoji';
 }
