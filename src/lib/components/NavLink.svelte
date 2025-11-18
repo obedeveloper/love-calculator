@@ -15,8 +15,8 @@
 
 <a
 	onclick={() => (menuIsClosed = true)}
-	class="px-6 py-3
-	{page.url.pathname === href && 'bg-pink-500 font-medium text-white'}"
+	class="px-6 py-3 sm:bg-transparent sm:p-0 sm:text-lg sm:hover:text-pink-600
+	{page.url.pathname === href && 'bg-pink-500 font-medium text-white sm:text-pink-600'}"
 	{href}
 	{target}
 >
