@@ -19,11 +19,11 @@
 	const feedbacks = ['Saved!', 'Link Copied!', 'Code Copied!'];
 </script>
 
-<div class="flex flex-wrap border border-pink-300">
+<div class="grid grid-cols-2 border border-pink-300">
 	{#each actions as { action, text }, i}
 		<button
-			class="grow cursor-pointer border border-pink-300 bg-pink-50 px-4
-			py-2 text-lg hover:bg-pink-200"
+			class="cursor-pointer border border-pink-300 bg-pink-50 px-4
+			py-2 text-lg hover:bg-pink-200 {i == actions.length - 1 && 'col-span-2'}"
 			disabled={!isApplicable}
 			onclick={(e) => {
 				action();
