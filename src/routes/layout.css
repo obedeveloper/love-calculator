@@ -9,3 +9,18 @@ body {
 main:has(.hero) {
 	@apply grid grid-rows-[auto_1fr];
 }
+
+@font-face {
+	font-family: 'DS-DIGI';
+	src: url('/fonts/DS-DIGI.TTF');
+}
+
+@font-face {
+	font-family: 'DS-DIGIB';
+	src: url('/fonts/DS-DIGIB.TTF');
+}
+
+@theme {
+	--font-ds-digi: 'DS-DIGI';
+	--font-ds-digi-b: 'DS-DIGIB';
+}
