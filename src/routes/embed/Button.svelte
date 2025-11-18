@@ -11,6 +11,7 @@
 	class="rounded px-4 py-2 text-2xl
   font-bold transition-colors {c}"
 	href={link.replace('og', 'shared')}
+	target="_blank"
 >
 	{text}
 </a>

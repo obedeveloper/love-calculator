@@ -29,6 +29,8 @@ export function getCode(url: string, params: string, title: string) {
   <iframe
     src="${new URL(`${url}/embed/${params}`)}"
     title="${title}"
+    width="500"
+	  height="350"
   >
   </iframe>`;
 }
