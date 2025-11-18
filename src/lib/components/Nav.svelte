@@ -8,7 +8,7 @@
 	let menuIsClosed = $state(true);
 </script>
 
-<header class="*:px-4">
+<header class="sticky top-0 bg-white *:px-4">
 	<div class="flex justify-between py-4 *:size-8 *:cursor-pointer">
 		<a href="/" class="inline-block" onclick={() => (menuIsClosed = true)}>
 			<img src="/android-chrome-512x512.png" alt="" />
