@@ -1,9 +1,7 @@
 <script lang="ts">
-	import navLinks from '$lib/navLinks.json';
-	import NavLink from './NavLink.svelte';
+	import NavBar from './NavBar.svelte';
 	import CloseMenu from '$lib/assets/close.svg';
 	import OpenMenu from '$lib/assets/hamburger-menu.svg';
-	import { slide } from 'svelte/transition';
 
 	let menuIsClosed = $state(true);
 </script>
@@ -22,16 +20,12 @@
 	</div>
 
 	{#if !menuIsClosed}
-		{@render NavBar('grid bg-pink-50 sm:hidden')}
+		<NavBar
+			class="absolute right-0 grid w-2/3 rounded border-[1.5px] border-pink-300
+			bg-pink-50 px-0! sm:hidden"
+			bind:menuIsClosed
+		></NavBar>
 	{/if}
 
-	{@render NavBar('hidden sm:flex sm:gap-4')}
+	<NavBar class="hidden sm:flex sm:gap-4" bind:menuIsClosed></NavBar>
 </header>
-
-{#snippet NavBar(c: string)}
-	<nav transition:slide class={c}>
-		{#each navLinks as { href, text, external }}
-			<NavLink bind:menuIsClosed {href} {text} {external}></NavLink>
-		{/each}
-	</nav>
-{/snippet}
