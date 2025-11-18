@@ -15,17 +15,23 @@
 	const isApplicable = $derived(!!lenFirstName && !!lenSecondName);
 </script>
 
-<div class="my-4 space-y-4 px-4">
-	<Form></Form>
-	{#if isApplicable}
-		{@render Calculations()}
-		<Actions {isApplicable}></Actions>
-	{:else}
-		<p class="mt-4 border-[1.5px] border-red-400 bg-red-100 py-2 text-center text-lg">
-			N/A <br />
-			Not Applicable!
-		</p>
-	{/if}
+<div class="mx-auto my-4 max-w-125 px-4 sm:grid sm:max-w-5xl sm:grid-cols-2 sm:gap-6">
+	<div
+		class="hidden h-full min-h-100 rounded-lg bg-[url('/couple-holding-bright-red-rose-hands.jpg')]
+		bg-cover bg-center bg-no-repeat sm:block"
+	></div>
+	<div class="space-y-4">
+		<Form></Form>
+		{#if isApplicable}
+			{@render Calculations()}
+			<Actions {isApplicable}></Actions>
+		{:else}
+			<p class="mt-4 border-[1.5px] border-red-400 bg-red-100 py-2 text-center text-lg">
+				N/A <br />
+				Not Applicable!
+			</p>
+		{/if}
+	</div>
 </div>
 
 {#snippet Calculations()}

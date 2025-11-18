@@ -22,8 +22,8 @@
 <div class="grid grid-cols-2 border border-pink-300">
 	{#each actions as { action, text }, i}
 		<button
-			class="cursor-pointer border border-pink-300 bg-pink-50 px-4
-			py-2 text-lg hover:bg-pink-200 {i == actions.length - 1 && 'col-span-2'}"
+			class="cursor-pointer border border-pink-300 py-2 text-lg
+			hover:bg-pink-100 {i == actions.length - 1 && 'col-span-2'}"
 			disabled={!isApplicable}
 			onclick={(e) => {
 				action();
