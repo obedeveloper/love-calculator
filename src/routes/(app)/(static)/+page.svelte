@@ -18,8 +18,8 @@
 		partner are? This fun tool calculates your love percentage based on your names.
 		<u class="underline-offset-2">Remember, </u> it's all in good spirit for entertainment! Read
 		<a
-			class="text-pink-600 underline sm:bg-pink-50 sm:px-1
-			sm:transition-colors sm:hover:bg-pink-500 sm:hover:text-white"
+			class="text-pink-700 underline sm:bg-white sm:px-1
+			sm:transition-colors sm:hover:bg-pink-700 sm:hover:text-white"
 			href="/about">about</a
 		> how we calculate it!
 	</p>
