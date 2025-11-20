@@ -6,15 +6,13 @@
 		text: string;
 		href: string;
 		external?: boolean;
-		menuIsClosed: boolean;
 	}
 
-	let { href, text, external, menuIsClosed = $bindable() }: Props = $props();
+	let { href, text, external }: Props = $props();
 	const target = external ? '_blank' : '';
 </script>
 
 <a
-	onclick={() => (menuIsClosed = true)}
 	class="px-6 py-3 sm:bg-transparent sm:p-0 sm:text-lg sm:hover:text-pink-600
 	{page.url.pathname === href && 'bg-pink-500 font-medium text-white sm:text-pink-600'}"
 	{href}

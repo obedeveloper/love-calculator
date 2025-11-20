@@ -5,14 +5,13 @@
 
 	interface Props {
 		class: string;
-		menuIsClosed: boolean;
 	}
 
-	let { class: c, menuIsClosed = $bindable() }: Props = $props();
+	let { class: c }: Props = $props();
 </script>
 
 <nav transition:slide class={c}>
 	{#each navLinks as { href, text, external }}
-		<NavLink bind:menuIsClosed {href} {text} {external}></NavLink>
+		<NavLink {href} {text} {external}></NavLink>
 	{/each}
 </nav>

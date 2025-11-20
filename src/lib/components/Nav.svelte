@@ -5,13 +5,23 @@
 	import logo from '$lib/assets/logo.svg';
 
 	let menuIsClosed = $state(true);
+	let toggleMenuButton: HTMLElement | undefined = $state();
 </script>
+
+<svelte:document
+	onclick={(e) => {
+		const target = e.target as HTMLElement;
+
+		if (target === toggleMenuButton) return;
+		menuIsClosed = true;
+	}}
+/>
 
 <header
 	class="sticky top-0 z-10 bg-white *:px-4 sm:flex sm:items-center sm:justify-between *:sm:px-6"
 >
 	<div class="flex justify-between py-4 *:size-8 *:cursor-pointer sm:justify-start">
-		<a href="/" class="inline-block" aria-label="Home" onclick={() => (menuIsClosed = true)}>
+		<a href="/" class="inline-block" aria-label="Home">
 			<img src={logo} alt="" />
 		</a>
 
@@ -20,7 +30,7 @@
 			aria-label="Toggle menu"
 			onclick={() => (menuIsClosed = !menuIsClosed)}
 		>
-			<img src={menuIsClosed ? OpenMenu : CloseMenu} alt="" />
+			<img src={menuIsClosed ? OpenMenu : CloseMenu} bind:this={toggleMenuButton} alt="" />
 		</button>
 	</div>
 
@@ -28,9 +38,8 @@
 		<NavBar
 			class="absolute right-0 grid w-2/3 rounded border-[1.5px] border-pink-300
 			bg-pink-50 px-0! sm:hidden"
-			bind:menuIsClosed
 		></NavBar>
 	{/if}
 
-	<NavBar class="hidden sm:flex sm:gap-4" bind:menuIsClosed></NavBar>
+	<NavBar class="hidden sm:flex sm:gap-4"></NavBar>
 </header>
