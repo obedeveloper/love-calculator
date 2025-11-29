@@ -36,7 +36,7 @@
 
 	{#if !menuIsClosed}
 		<NavBar
-			class="absolute right-0 grid w-2/3 rounded border-[1.5px] border-pink-300
+			class="absolute right-4 grid w-2/3 rounded border-[1.5px] border-pink-300
 			bg-pink-50 px-0! sm:hidden"
 		></NavBar>
 	{/if}
