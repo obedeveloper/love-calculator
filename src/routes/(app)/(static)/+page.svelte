@@ -3,8 +3,8 @@
 </script>
 
 <div
-	class="hero grid place-content-center gap-6 px-4 py-4
-	sm:bg-cover sm:bg-center sm:px-6 *:sm:mx-auto *:sm:max-w-160"
+	class="hero mb-8 grid place-content-center gap-6 py-4 *:px-4
+	sm:m-0 sm:bg-cover sm:bg-center sm:px-6 *:sm:mx-auto *:sm:max-w-160"
 >
 	<h1
 		class="font-libre text-center text-4xl font-bold text-pink-600
@@ -12,6 +12,8 @@
 	>
 		Are You a Match Made in Heaven? <u>Calculate</u> Your Love Percentage!
 	</h1>
+
+	<img src="/couple.jpg" class="px-0! sm:hidden" alt="Couple hugging!" />
 
 	<p class="text-justify sm:text-center sm:text-lg sm:text-white">
 		Welcome to our Love Percentage Calculator! <em>Curious</em> about how compatible you and your
