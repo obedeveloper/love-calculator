@@ -19,11 +19,12 @@
 	const feedbacks = ['Saved!', 'Link Copied!', 'Code Copied!'];
 </script>
 
-<div class="grid grid-cols-2 border border-pink-300">
+<div class="grid grid-cols-2 gap-2">
 	{#each actions as { action, text }, i}
 		<button
-			class="cursor-pointer border border-pink-300 py-2 text-lg
-			hover:bg-pink-100 {i == actions.length - 1 && 'col-span-2'}"
+			class="cursor-pointer transition-colors duration-300 hover:bg-rose-300
+			{i == 0 && 'bg-rose-500 text-white hover:bg-rose-600'} rounded
+			py-2 text-lg {i == actions.length - 1 && 'col-span-2'} bg-rose-200"
 			disabled={!isApplicable}
 			onclick={(e) => {
 				action();
