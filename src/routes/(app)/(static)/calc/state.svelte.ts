@@ -1,5 +1,5 @@
 import calc, { getCalculationSteps } from '$lib/calc';
-import { copy, getCode, getUniqueItems, type HistoryItem } from './utils';
+import { copy, getCode, getUniqueItems, type HistoryItem } from '../../../../lib/utils';
 
 export default class State {
 	firstName = $state('Romeo');

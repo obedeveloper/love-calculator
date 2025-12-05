@@ -21,7 +21,7 @@
 		bg-cover bg-center bg-no-repeat sm:block"
 	></div>
 	<div class="space-y-4">
-		<Form></Form>
+		<Form bind:firstName={state.firstName} bind:secondName={state.secondName}></Form>
 		{#if isApplicable}
 			{@render Calculations()}
 			<Actions {isApplicable}></Actions>

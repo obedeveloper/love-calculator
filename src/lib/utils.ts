@@ -1,3 +1,8 @@
+export interface Names {
+	firstName: string;
+	secondName: string;
+}
+
 export interface HistoryItem {
 	firstName: string;
 	secondName: string;
