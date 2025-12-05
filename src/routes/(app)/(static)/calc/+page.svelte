@@ -36,7 +36,7 @@
 
 {#snippet Calculations()}
 	<div class="grid gap-4">
-		<Steps></Steps>
+		<Steps steps={state.steps}></Steps>
 		<p
 			class="border-[1.5px] border-pink-400
       bg-pink-100 text-center font-ds-digi-b text-7xl text-pink-900"
