@@ -1,66 +1,66 @@
 <svelte:options css="injected" />
 
 <script lang="ts">
-  import calc from '$lib/calc';
-  import { randomLoveEmoji } from './utils';
+	import calc from '$lib/calc';
+	import { randomLoveEmoji } from './utils';
 
-  interface Props {
-    firstName: string;
-    secondName: string;
-  }
+	interface Props {
+		firstName: string;
+		secondName: string;
+	}
 
-  const { firstName, secondName }: Props = $props();
-  const emoji = randomLoveEmoji();
+	const { firstName, secondName }: Props = $props();
+	const emoji = randomLoveEmoji();
 </script>
 
 <div>
-  <h1>{firstName}</h1>
-  <p>
-    <span class="emoji">{emoji}</span>
-    <span class="percentage">{calc(firstName, secondName)}%</span>
-    <span class="emoji">{emoji}</span>
-  </p>
-  <h1>{secondName}</h1>
+	<h1>{firstName}</h1>
+	<p>
+		<span class="emoji">{emoji}</span>
+		<span class="percentage">{calc(firstName, secondName)}%</span>
+		<span class="emoji">{emoji}</span>
+	</p>
+	<h1>{secondName}</h1>
 </div>
 
 <style>
-  div {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    height: 100%;
-    padding: 1rem;
-  }
+	div {
+		display: flex;
+		flex-direction: column;
+		background-color: white;
+		height: 100%;
+		padding: 1rem;
+	}
 
-  div,
-  p {
-    align-items: center;
-  }
+	div,
+	p {
+		align-items: center;
+	}
 
-  h1 {
-    font-family: 'inter';
-    margin: 0;
-  }
+	h1 {
+		font-family: 'inter';
+		margin: 0;
+	}
 
-  p {
-    display: flex;
-  }
+	p {
+		display: flex;
+	}
 
-  span {
-    color: #570023;
-  }
+	span {
+		color: #570023;
+	}
 
-  h1,
-  .emoji {
-    font-size: 7.5rem;
-  }
+	h1,
+	.emoji {
+		font-size: 7.5rem;
+	}
 
-  .percentage {
-    font-size: 15rem;
-    font-family: 'ds-digital';
-  }
+	.percentage {
+		font-size: 15rem;
+		font-family: 'ds-digital';
+	}
 
-  .emoji {
-    font-family: 'noto-emoji';
-  }
+	.emoji {
+		font-family: 'noto-emoji';
+	}
 </style>
