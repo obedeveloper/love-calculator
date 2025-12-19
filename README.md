@@ -41,4 +41,8 @@ Our algorithm brings back the fun we had as children when figuring out love perc
 
 - Endless Combinations: Try different name pairs and discover a variety of love percentages!
 
+- Step-by-Step Breakdown: Understand how the love percentage is calculated with a detailed view of each step.
+
+- Offline Functionality: Use the app anytime, anywhere without needing an internet connection.
+
 We believe every relationship has potential, and our app is meant to celebrate that in a lighthearted manner. Dive in, have fun, and enjoy the journey of discovering love percentages with your friends and loved ones!
