@@ -6,6 +6,10 @@
 	import State from './state.svelte';
 	import Steps from './Steps.svelte';
 	import NumberFlow from '@number-flow/svelte';
+	import JSConfetti from 'js-confetti';
+	import romance from '$lib/assets/careles-romance.mp3';
+	import laughing from '$lib/assets/laughing-dog-meme.mp3';
+	import { onMount } from 'svelte';
 
 	const state = new State(page.url.origin);
 	setStateContext(state);
@@ -13,6 +17,59 @@
 	const lenFirstName = $derived(state.firstName.length);
 	const lenSecondName = $derived(state.secondName.length);
 	const isApplicable = $derived(!!lenFirstName && !!lenSecondName);
+	let percentage = $derived(state.percentage);
+
+	onMount(() => {
+		const jsConfetti = new JSConfetti();
+		const audioRomance = new Audio(romance);
+		const audioLaughing = new Audio(laughing);
+
+		audioRomance.loop = true;
+		audioLaughing.loop = true;
+
+		function pauseRomance() {
+			audioRomance.pause();
+			audioRomance.currentTime = 0;
+		}
+
+		function pauseLaughing() {
+			audioLaughing.pause();
+			audioLaughing.currentTime = 0;
+		}
+
+		$effect(() => {
+			(function confettiLaugh() {
+				if (percentage >= 20 || percentage == 0) return;
+
+				jsConfetti
+					.addConfetti({
+						emojis: ['😂', '😆', '😅', '🤣', '😁'],
+						confettiNumber: 200
+					})
+					.then(confettiLaugh);
+			})();
+
+			(function confettiRomance() {
+				if (percentage !== 100) return;
+
+				jsConfetti
+					.addConfetti({
+						emojis: ['🥰', '😍', '💝', '💖', '😘'],
+						confettiNumber: 200
+					})
+					.then(confettiRomance);
+			})();
+
+			percentage === 100 ? audioRomance.play() : pauseRomance();
+			percentage < 20 ? audioLaughing.play() : pauseLaughing();
+		});
+
+		return () => {
+			pauseRomance();
+			pauseLaughing();
+			percentage = 0;
+		};
+	});
 </script>
 
 <div class="mx-auto my-4 max-w-125 px-4 sm:grid sm:max-w-5xl sm:grid-cols-2 sm:gap-6">
