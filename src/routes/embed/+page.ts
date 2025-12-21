@@ -1,3 +1,3 @@
 export const load = ({ url }) => {
-  return { link: url.toString().replace('embed', 'og') };
+	return { link: url.toString().replace('embed', 'og') };
 };
