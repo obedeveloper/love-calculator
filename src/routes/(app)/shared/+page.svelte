@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Calc from '$lib/components/calc/Calc.svelte';
 	import OG from '$lib/components/OG.svelte';
 
 	const { data } = $props();
@@ -7,4 +8,4 @@
 
 <OG {title} desc="{title}! Remember, it's all in good spirit for entertainment!" img={ogURL}></OG>
 
-<img class="mx-auto w-full max-w-160" src={ogURL} alt="" />
+<Calc fname={data.firstName} sname={data.secondName}></Calc>

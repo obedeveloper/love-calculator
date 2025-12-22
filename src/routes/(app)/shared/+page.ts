@@ -14,5 +14,5 @@ export const load = ({ url }) => {
 	const title = `${firstName} Loves ${secondName} ${percentage}%`;
 	const ogURL = url.toString().replace('shared', 'og');
 
-	return { title, ogURL };
+	return { title, ogURL, firstName, secondName };
 };
