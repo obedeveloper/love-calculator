@@ -1,6 +1,6 @@
 <script lang="ts">
-	import './layout.css';
 	import '@fontsource-variable/roboto';
+	import './layout.css';
 
 	let { children } = $props();
 </script>
