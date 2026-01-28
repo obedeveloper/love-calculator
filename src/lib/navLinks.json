@@ -1,9 +1,5 @@
 [
 	{
-		"href": "/",
-		"text": "Home"
-	},
-	{
 		"href": "/calc",
 		"text": "Calculate"
 	},
