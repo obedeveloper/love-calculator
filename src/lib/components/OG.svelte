@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import openGraphImage from '$lib/assets/open-graph.png';
 
 	interface Props {
 		title: string;
@@ -8,7 +9,11 @@
 	}
 
 	const { origin } = page.url;
-	const { desc, img = origin + '/open-graph.png', title }: Props = $props();
+	const {
+		desc,
+		img = new URL(openGraphImage, page.url.origin).toString(),
+		title
+	}: Props = $props();
 </script>
 
 <svelte:head>

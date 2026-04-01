@@ -71,7 +71,7 @@
 
 <div class="mx-auto my-4 max-w-125 px-4 sm:grid sm:max-w-5xl sm:grid-cols-2 sm:gap-6">
 	<div
-		class="hidden h-full min-h-100 rounded-lg bg-[url('/couple-holding-bright-red-rose-hands.jpg')]
+		class="hidden h-full min-h-100 rounded-lg bg-[url('$lib/assets/rose.jpg')]
 		bg-cover bg-center bg-no-repeat sm:block"
 	></div>
 	<div class="space-y-4">
