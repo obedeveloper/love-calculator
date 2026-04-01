@@ -1,16 +1,16 @@
 @font-face {
 	font-family: 'DS-DIGI';
-	src: url('/fonts/DS-DIGI.TTF');
+	src: url('$lib/fonts/DS-DIGI.TTF');
 }
 
 @font-face {
 	font-family: 'DS-DIGIB';
-	src: url('/fonts/DS-DIGIB.TTF');
+	src: url('$lib/fonts/DS-DIGIB.TTF');
 }
 
 @font-face {
 	font-family: 'noto-emoji';
-	src: url('/fonts/NotoEmoji-Regular.ttf');
+	src: url('$lib/fonts/NotoEmoji-Regular.ttf');
 }
 
 @import 'tailwindcss';
