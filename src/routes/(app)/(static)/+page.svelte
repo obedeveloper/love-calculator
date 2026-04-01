@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CTA from '$lib/components/CTA.svelte';
+	import coupleImage from '$lib/assets/couple.jpg';
 </script>
 
 <div
@@ -13,7 +14,7 @@
 		Are You a Match Made in Heaven? <u>Calculate</u> Your Love Percentage!
 	</h1>
 
-	<img src="/couple.jpg" class="px-0! sm:hidden" alt="Couple hugging!" />
+	<img src={coupleImage} class="px-0! sm:hidden" alt="Couple hugging!" />
 
 	<p class="text-justify sm:text-center sm:text-lg sm:text-white">
 		Welcome to our Love Percentage Calculator! <em>Curious</em> about how compatible you and your
@@ -33,7 +34,7 @@
 	@media (width >= 40rem) {
 		div {
 			background-image:
-				linear-gradient(hsl(from var(--color-pink-900) h s l / 50%)), url('/couple.jpg');
+				linear-gradient(hsl(from var(--color-pink-900) h s l / 50%)), url('$lib/assets/couple.jpg');
 		}
 	}
 </style>
